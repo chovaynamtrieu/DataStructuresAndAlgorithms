@@ -37,10 +37,18 @@ void BinarySearchTree::inOrderTraversalHelper(Node* node) {
     }
 
     inOrderTraversalHelper(node->left);
-    cout << node->value << " ";
+    cout << "value: "<< node->value << ". Size of node: " << sizeHelper(node) <<std::endl;
     inOrderTraversalHelper(node->right);
 }
 
 void BinarySearchTree::inOrderTraversal() {
     inOrderTraversalHelper(root);
+}
+
+int BinarySearchTree::sizeHelper(Node* node) {
+    if (node == nullptr) {
+        return 0;
+    }
+
+    return 1 + sizeHelper(node->left) + sizeHelper(node->right);
 }

@@ -21,6 +21,7 @@ public:
     BinarySearchTree();
     void insert(int value);
     void inOrderTraversal();
+    int sizeHelper(Node* node);
 };
 
 #endif  // BINARY_SEARCH_TREE_H
