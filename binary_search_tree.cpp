@@ -43,6 +43,7 @@ void BinarySearchTree::inOrderTraversalHelper(Node* node) {
 
 void BinarySearchTree::inOrderTraversal() {
     inOrderTraversalHelper(root);
+    cout << "isFullBinaryTree: " << isFullBinaryTree(root);
 }
 
 int BinarySearchTree::sizeHelper(Node* node) {
@@ -55,4 +56,19 @@ int BinarySearchTree::sizeHelper(Node* node) {
 
 int BinarySearchTree::size() {
     return sizeHelper(root);
+}
+
+bool BinarySearchTree::isFullBinaryTree(Node* root) {
+    // If the tree is empty, it is a full binary tree
+    if (root == nullptr) {
+        return true;
+    }
+
+    // If a node has only one child or no children, the tree is not a full binary tree
+    if ((root->left == nullptr && root->right != nullptr) || (root->left != nullptr && root->right == nullptr)) {
+        return false;
+    }
+
+    // Recursively check if the left and right subtrees are full binary trees
+    return isFullBinaryTree(root->left) && isFullBinaryTree(root->right);
 }

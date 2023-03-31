@@ -23,6 +23,7 @@ public:
     void insert(int value);
     void inOrderTraversal();
     int size();
+    bool isFullBinaryTree(Node* root);
 };
 
 #endif  // BINARY_SEARCH_TREE_H
