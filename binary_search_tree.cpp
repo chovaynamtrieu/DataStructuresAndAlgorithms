@@ -52,3 +52,7 @@ int BinarySearchTree::sizeHelper(Node* node) {
 
     return 1 + sizeHelper(node->left) + sizeHelper(node->right);
 }
+
+int BinarySearchTree::size() {
+    return sizeHelper(root);
+}

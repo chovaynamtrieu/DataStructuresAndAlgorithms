@@ -16,12 +16,13 @@ private:
 
     Node* insertHelper(Node* node, int value);
     void inOrderTraversalHelper(Node* node);
+    int sizeHelper(Node* node);
 
 public:
     BinarySearchTree();
     void insert(int value);
     void inOrderTraversal();
-    int sizeHelper(Node* node);
+    int size();
 };
 
 #endif  // BINARY_SEARCH_TREE_H
